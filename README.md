@@ -10,8 +10,8 @@ npm audit --json > my-audit.json
 
 The amalgamate.py script takes three arguments:
 
-- output, The file to output the amalgamated audit data.  
-- type, The type of dependencies to report audit details on.  
+- output, The file to output the amalgamated audit data to.  
+- type, The type of dependencies to report audit details on.  This argument can be devDependencies, dependencies or both.    
 - inputs, The input json audit files.  
 
 Example arguments
@@ -22,16 +22,17 @@ python3 amalgamate.py output.txt both sample-data/handlebars.json,sample-data/br
 
 Sample output
 
-┌────────────────────────────────────────────────────────────────────────────────────────────────────┐
-│High           │ Code Injection                                                                     │
-│────────────────────────────────────────────────────────────────────────────────────────────────────│
-│Package        │ crossbow                                                                           │
-│────────────────────────────────────────────────────────────────────────────────────────────────────│
-│Dependency of  │ crossbow                                                                           │
-│────────────────────────────────────────────────────────────────────────────────────────────────────│
-│Path           │ crossbow > js-yaml                                                                 │
-│────────────────────────────────────────────────────────────────────────────────────────────────────│
-│More info      │ https://npmjs.com/advisories/813                                                   │
-│────────────────────────────────────────────────────────────────────────────────────────────────────│
-│Project        │ sample-data/browser-sync.json                                                      │
-└────────────────────────────────────────────────────────────────────────────────────────────────────┘
+┌────────────────────────────────────────────────────────────────────────────────────────────────────┐   
+│High           │ Code Injection                                                                     │     
+│────────────────────────────────────────────────────────────────────────────────────────────────────│   
+│Package        │ crossbow                                                                           │   
+│────────────────────────────────────────────────────────────────────────────────────────────────────│   
+│Dependency of  │ crossbow                                                                           │   
+│────────────────────────────────────────────────────────────────────────────────────────────────────│   
+│Path           │ crossbow > js-yaml                                                                 │   
+│────────────────────────────────────────────────────────────────────────────────────────────────────│   
+│More info      │ https://npmjs.com/advisories/813                                                   │   
+│────────────────────────────────────────────────────────────────────────────────────────────────────│   
+│Project        │ sample-data/browser-sync.json                                                      │   
+└────────────────────────────────────────────────────────────────────────────────────────────────────┘    
+
