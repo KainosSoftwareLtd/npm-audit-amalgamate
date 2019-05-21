@@ -1,0 +1,360 @@
+{
+  "actions": [
+    {
+      "module": "lerna",
+      "resolves": [
+        {
+          "id": 803,
+          "path": "lerna>@lerna/add>@lerna/bootstrap>@lerna/run-lifecycle>npm-lifecycle>node-gyp>tar",
+          "dev": true,
+          "optional": false,
+          "bundled": false
+        },
+        {
+          "id": 803,
+          "path": "lerna>@lerna/bootstrap>@lerna/run-lifecycle>npm-lifecycle>node-gyp>tar",
+          "dev": true,
+          "optional": false,
+          "bundled": false
+        },
+        {
+          "id": 803,
+          "path": "lerna>@lerna/changed>@lerna/version>@lerna/run-lifecycle>npm-lifecycle>node-gyp>tar",
+          "dev": true,
+          "optional": false,
+          "bundled": false
+        },
+        {
+          "id": 803,
+          "path": "lerna>@lerna/publish>@lerna/npm-publish>@lerna/run-lifecycle>npm-lifecycle>node-gyp>tar",
+          "dev": true,
+          "optional": false,
+          "bundled": false
+        },
+        {
+          "id": 803,
+          "path": "lerna>@lerna/publish>@lerna/pack-directory>@lerna/run-lifecycle>npm-lifecycle>node-gyp>tar",
+          "dev": true,
+          "optional": false,
+          "bundled": false
+        },
+        {
+          "id": 803,
+          "path": "lerna>@lerna/publish>@lerna/run-lifecycle>npm-lifecycle>node-gyp>tar",
+          "dev": true,
+          "optional": false,
+          "bundled": false
+        },
+        {
+          "id": 803,
+          "path": "lerna>@lerna/publish>@lerna/version>@lerna/run-lifecycle>npm-lifecycle>node-gyp>tar",
+          "dev": true,
+          "optional": false,
+          "bundled": false
+        },
+        {
+          "id": 803,
+          "path": "lerna>@lerna/version>@lerna/run-lifecycle>npm-lifecycle>node-gyp>tar",
+          "dev": true,
+          "optional": false,
+          "bundled": false
+        },
+        {
+          "id": 886,
+          "path": "lerna>@lerna/add>@lerna/bootstrap>@lerna/run-lifecycle>npm-lifecycle>node-gyp>fstream",
+          "dev": true,
+          "optional": false,
+          "bundled": false
+        },
+        {
+          "id": 886,
+          "path": "lerna>@lerna/add>@lerna/bootstrap>@lerna/run-lifecycle>npm-lifecycle>node-gyp>tar>fstream",
+          "dev": true,
+          "optional": false,
+          "bundled": false
+        },
+        {
+          "id": 886,
+          "path": "lerna>@lerna/bootstrap>@lerna/run-lifecycle>npm-lifecycle>node-gyp>fstream",
+          "dev": true,
+          "optional": false,
+          "bundled": false
+        },
+        {
+          "id": 886,
+          "path": "lerna>@lerna/bootstrap>@lerna/run-lifecycle>npm-lifecycle>node-gyp>tar>fstream",
+          "dev": true,
+          "optional": false,
+          "bundled": false
+        },
+        {
+          "id": 886,
+          "path": "lerna>@lerna/changed>@lerna/version>@lerna/run-lifecycle>npm-lifecycle>node-gyp>fstream",
+          "dev": true,
+          "optional": false,
+          "bundled": false
+        },
+        {
+          "id": 886,
+          "path": "lerna>@lerna/changed>@lerna/version>@lerna/run-lifecycle>npm-lifecycle>node-gyp>tar>fstream",
+          "dev": true,
+          "optional": false,
+          "bundled": false
+        },
+        {
+          "id": 886,
+          "path": "lerna>@lerna/publish>@lerna/npm-publish>@lerna/run-lifecycle>npm-lifecycle>node-gyp>fstream",
+          "dev": true,
+          "optional": false,
+          "bundled": false
+        },
+        {
+          "id": 886,
+          "path": "lerna>@lerna/publish>@lerna/npm-publish>@lerna/run-lifecycle>npm-lifecycle>node-gyp>tar>fstream",
+          "dev": true,
+          "optional": false,
+          "bundled": false
+        },
+        {
+          "id": 886,
+          "path": "lerna>@lerna/publish>@lerna/pack-directory>@lerna/run-lifecycle>npm-lifecycle>node-gyp>fstream",
+          "dev": true,
+          "optional": false,
+          "bundled": false
+        },
+        {
+          "id": 886,
+          "path": "lerna>@lerna/publish>@lerna/pack-directory>@lerna/run-lifecycle>npm-lifecycle>node-gyp>tar>fstream",
+          "dev": true,
+          "optional": false,
+          "bundled": false
+        },
+        {
+          "id": 886,
+          "path": "lerna>@lerna/publish>@lerna/run-lifecycle>npm-lifecycle>node-gyp>fstream",
+          "dev": true,
+          "optional": false,
+          "bundled": false
+        },
+        {
+          "id": 886,
+          "path": "lerna>@lerna/publish>@lerna/run-lifecycle>npm-lifecycle>node-gyp>tar>fstream",
+          "dev": true,
+          "optional": false,
+          "bundled": false
+        },
+        {
+          "id": 886,
+          "path": "lerna>@lerna/publish>@lerna/version>@lerna/run-lifecycle>npm-lifecycle>node-gyp>fstream",
+          "dev": true,
+          "optional": false,
+          "bundled": false
+        },
+        {
+          "id": 886,
+          "path": "lerna>@lerna/publish>@lerna/version>@lerna/run-lifecycle>npm-lifecycle>node-gyp>tar>fstream",
+          "dev": true,
+          "optional": false,
+          "bundled": false
+        },
+        {
+          "id": 886,
+          "path": "lerna>@lerna/version>@lerna/run-lifecycle>npm-lifecycle>node-gyp>fstream",
+          "dev": true,
+          "optional": false,
+          "bundled": false
+        },
+        {
+          "id": 886,
+          "path": "lerna>@lerna/version>@lerna/run-lifecycle>npm-lifecycle>node-gyp>tar>fstream",
+          "dev": true,
+          "optional": false,
+          "bundled": false
+        }
+      ],
+      "target": "3.14.1",
+      "action": "install",
+      "isMajor": false
+    },
+    {
+      "action": "install",
+      "module": "crossbow",
+      "target": "4.3.3",
+      "isMajor": false,
+      "resolves": [
+        {
+          "id": 813,
+          "path": "crossbow>js-yaml",
+          "dev": false,
+          "optional": false,
+          "bundled": true
+        }
+      ]
+    }
+  ],
+  "advisories": {
+    "803": {
+      "findings": [
+        {
+          "version": "2.2.1",
+          "paths": [
+            "lerna>@lerna/add>@lerna/bootstrap>@lerna/run-lifecycle>npm-lifecycle>node-gyp>tar",
+            "lerna>@lerna/bootstrap>@lerna/run-lifecycle>npm-lifecycle>node-gyp>tar",
+            "lerna>@lerna/changed>@lerna/version>@lerna/run-lifecycle>npm-lifecycle>node-gyp>tar",
+            "lerna>@lerna/publish>@lerna/npm-publish>@lerna/run-lifecycle>npm-lifecycle>node-gyp>tar",
+            "lerna>@lerna/publish>@lerna/pack-directory>@lerna/run-lifecycle>npm-lifecycle>node-gyp>tar",
+            "lerna>@lerna/publish>@lerna/run-lifecycle>npm-lifecycle>node-gyp>tar",
+            "lerna>@lerna/publish>@lerna/version>@lerna/run-lifecycle>npm-lifecycle>node-gyp>tar",
+            "lerna>@lerna/version>@lerna/run-lifecycle>npm-lifecycle>node-gyp>tar"
+          ],
+          "dev": true,
+          "optional": false,
+          "bundled": false
+        }
+      ],
+      "id": 803,
+      "created": "2019-04-04T03:31:56.572Z",
+      "updated": "2019-05-15T14:13:58.612Z",
+      "deleted": null,
+      "title": "Arbitrary File Overwrite",
+      "found_by": {
+        "link": "",
+        "name": "Max Justicz"
+      },
+      "reported_by": {
+        "link": "",
+        "name": "Max Justicz"
+      },
+      "module_name": "tar",
+      "cves": [],
+      "vulnerable_versions": "<2.2.2 || >=3.0.0 <4.4.2",
+      "patched_versions": ">=2.2.2 <3.0.0 || >=4.4.2",
+      "overview": "Versions of `tar` prior to 4.4.2 for 4.x and 2.2.2 for 2.x are vulnerable to Arbitrary File Overwrite. Extracting tarballs containing a hardlink to a file that already exists in the system, and a file that matches the hardlink will overwrite the system's file with the contents of the extracted file.",
+      "recommendation": "For tar 4.x, upgrade to version 4.4.2 or later.\nFor tar 2.x, upgrade to version 2.2.2 or later.",
+      "references": "- [HackerOne Report](https://hackerone.com/reports/344595)",
+      "access": "public",
+      "severity": "high",
+      "cwe": "CWE-59",
+      "metadata": {
+        "module_type": "",
+        "exploitability": 5,
+        "affected_components": ""
+      },
+      "url": "https://npmjs.com/advisories/803"
+    },
+    "813": {
+      "findings": [
+        {
+          "version": "3.13.0",
+          "paths": [
+            "crossbow>js-yaml"
+          ],
+          "dev": false,
+          "optional": false,
+          "bundled": true
+        }
+      ],
+      "id": 813,
+      "created": "2019-04-10T19:02:51.064Z",
+      "updated": "2019-04-15T21:29:06.670Z",
+      "deleted": null,
+      "title": "Code Injection",
+      "found_by": {
+        "link": "",
+        "name": "Alex Kocharin"
+      },
+      "reported_by": {
+        "link": "",
+        "name": "Alex Kocharin"
+      },
+      "module_name": "js-yaml",
+      "cves": [],
+      "vulnerable_versions": "<3.13.1",
+      "patched_versions": ">=3.13.1",
+      "overview": "Versions of `js-yaml` prior to 3.13.1 are vulnerable to Code Injection. The `load()` function may execute arbitrary code injected through a malicious YAML file. Objects that have `toString` as key, JavaScript code as value and are used as explicit mapping keys allow attackers to execute the supplied code through the `load()` function. The `safeLoad()` function is unaffected.\n\nAn example payload is \n`{ toString: !<tag:yaml.org,2002:js/function> 'function (){return Date.now()}' } : 1` \nwhich returns the object \n{\n  \"1553107949161\": 1\n}",
+      "recommendation": "Upgrade to version 3.13.1.",
+      "references": "- [GitHub PR](https://github.com/nodeca/js-yaml/pull/480)",
+      "access": "public",
+      "severity": "high",
+      "cwe": "CWE-94",
+      "metadata": {
+        "module_type": "",
+        "exploitability": 5,
+        "affected_components": ""
+      },
+      "url": "https://npmjs.com/advisories/813"
+    },
+    "886": {
+      "findings": [
+        {
+          "version": "1.0.11",
+          "paths": [
+            "lerna>@lerna/add>@lerna/bootstrap>@lerna/run-lifecycle>npm-lifecycle>node-gyp>fstream",
+            "lerna>@lerna/add>@lerna/bootstrap>@lerna/run-lifecycle>npm-lifecycle>node-gyp>tar>fstream",
+            "lerna>@lerna/bootstrap>@lerna/run-lifecycle>npm-lifecycle>node-gyp>fstream",
+            "lerna>@lerna/bootstrap>@lerna/run-lifecycle>npm-lifecycle>node-gyp>tar>fstream",
+            "lerna>@lerna/changed>@lerna/version>@lerna/run-lifecycle>npm-lifecycle>node-gyp>fstream",
+            "lerna>@lerna/changed>@lerna/version>@lerna/run-lifecycle>npm-lifecycle>node-gyp>tar>fstream",
+            "lerna>@lerna/publish>@lerna/npm-publish>@lerna/run-lifecycle>npm-lifecycle>node-gyp>fstream",
+            "lerna>@lerna/publish>@lerna/npm-publish>@lerna/run-lifecycle>npm-lifecycle>node-gyp>tar>fstream",
+            "lerna>@lerna/publish>@lerna/pack-directory>@lerna/run-lifecycle>npm-lifecycle>node-gyp>fstream",
+            "lerna>@lerna/publish>@lerna/pack-directory>@lerna/run-lifecycle>npm-lifecycle>node-gyp>tar>fstream",
+            "lerna>@lerna/publish>@lerna/run-lifecycle>npm-lifecycle>node-gyp>fstream",
+            "lerna>@lerna/publish>@lerna/run-lifecycle>npm-lifecycle>node-gyp>tar>fstream",
+            "lerna>@lerna/publish>@lerna/version>@lerna/run-lifecycle>npm-lifecycle>node-gyp>fstream",
+            "lerna>@lerna/publish>@lerna/version>@lerna/run-lifecycle>npm-lifecycle>node-gyp>tar>fstream",
+            "lerna>@lerna/version>@lerna/run-lifecycle>npm-lifecycle>node-gyp>fstream",
+            "lerna>@lerna/version>@lerna/run-lifecycle>npm-lifecycle>node-gyp>tar>fstream"
+          ],
+          "dev": true,
+          "optional": false,
+          "bundled": false
+        }
+      ],
+      "id": 886,
+      "created": "2019-05-15T14:22:26.820Z",
+      "updated": "2019-05-15T14:24:19.890Z",
+      "deleted": null,
+      "title": "Arbitrary File Overwrite",
+      "found_by": {
+        "link": "",
+        "name": "Max Justicz"
+      },
+      "reported_by": {
+        "link": "",
+        "name": "Max Justicz"
+      },
+      "module_name": "fstream",
+      "cves": [],
+      "vulnerable_versions": "<1.0.12",
+      "patched_versions": ">=1.0.12",
+      "overview": "Versions of `fstream` prior to 1.0.12 are vulnerable to Arbitrary File Overwrite. Extracting tarballs containing a hardlink to a file that already exists in the system and a file that matches the hardlink will overwrite the system's file with the contents of the extracted file. The `fstream.DirWriter()` function is vulnerable.",
+      "recommendation": "Upgrade to version 1.0.12 or later.",
+      "references": "- [GitHub Commit](https://github.com/npm/fstream/commit/6a77d2fa6e1462693cf8e46f930da96ec1b0bb22)",
+      "access": "public",
+      "severity": "high",
+      "cwe": "CWE-59",
+      "metadata": {
+        "module_type": "",
+        "exploitability": 5,
+        "affected_components": ""
+      },
+      "url": "https://npmjs.com/advisories/886"
+    }
+  },
+  "muted": [],
+  "metadata": {
+    "vulnerabilities": {
+      "info": 0,
+      "low": 0,
+      "moderate": 0,
+      "high": 25,
+      "critical": 0
+    },
+    "dependencies": 5497,
+    "devDependencies": 42072,
+    "optionalDependencies": 274,
+    "totalDependencies": 47778
+  },
+  "runId": "f7a0e9a9-8790-4e5e-87cb-a3627bc251a0"
+}
