@@ -1,4 +1,5 @@
 import argparse
+import os
 import json
 
 
@@ -39,8 +40,24 @@ def path_root(path_parts):
     return path_parts[0]
 
 
-def join_path(path_parts):
-    return ' > '.join(path_parts)
+def join_path(path_parts, column_one_width, width):
+
+    def pad(text, size):
+        padded = text
+        for x in range(size - len(text)):
+            padded += ' '
+        return padded
+
+    path = ' > '.join(path_parts)
+    length = len(path)
+    if length > (width - column_one_width):
+        # Nasty code to print beautiful output
+        first_line_width = width - column_one_width - 5
+        return path[0: first_line_width] + '   │\n' \
+            + pad('│', column_one_width + 1) + '│ ' \
+            + pad(path[first_line_width: length], width - 2 - column_one_width)
+    else:
+        return path
 
 
 def write_line(f, length, type):
@@ -63,8 +80,8 @@ def write_line(f, length, type):
         f.write(f'{edge}{line}{edge}\n')
 
 
-def write_name_value(f, length, name, value):
-    column_one_width = 15
+def write_name_value(f, length, name, value, width=15):
+    column_one_width = width
     padding = 2
     edge = '│'
 
@@ -79,6 +96,37 @@ def write_name_value(f, length, name, value):
     f.write(f'{edge}{column_one}{edge}{column_two}{edge}\n')
 
 
+def write_summary(f, summary_data):
+
+    def pad(str, size):
+        count = len(str)
+        for x in range(size-count):
+            str += ' '
+        return str
+
+    line_length = 100
+    column_one_width = 30
+    write_line(f, line_length, 'top')
+    write_name_value(f, line_length, 'Project', f'{pad("Critical", 10)}{pad("High", 10)}{pad("Moderate", 10)}{pad("Low", 10)}Info', column_one_width)
+    write_line(f, line_length, None)
+
+    projects = summary_data.keys()
+    for idx, project in enumerate(projects):
+        result = summary_data[project]
+        critical = str(result['critical'])
+        high = str(result['high'])
+        moderate = str(result['moderate'])
+        low = str(result['low'])
+        info = str(result['info'])
+        project_name = os.path.split(project)[-1].split('.')[0]
+
+        write_name_value(f, line_length, project_name, f'{pad(critical, 10)}{pad(high, 10)}{pad(moderate, 10)}{pad(low, 10)}{info}', column_one_width)
+        if idx + 1 < len(projects):
+            write_line(f, line_length, None)
+
+    write_line(f, line_length, 'bottom')
+
+
 def write_vulnerability(f, resolve):
     vulnerability = resolve['vulnerability']
     severity = vulnerability['severity'].title()
@@ -86,22 +134,24 @@ def write_vulnerability(f, resolve):
     module = resolve['module']
     project = resolve['project']
     line_length = 100
+    column_one_width = 15
 
     write_line(f, line_length, 'top')
-    write_name_value(f, line_length, severity, title)
+    write_name_value(f, line_length, severity, title, column_one_width)
     write_line(f, line_length, None)
-    write_name_value(f, line_length, 'Package', module)
+    write_name_value(f, line_length, 'Package', module, column_one_width)
     write_line(f, line_length, None)
     dev_text = ''
     if resolve['dev']:
         dev_text = ' [dev]'
-    write_name_value(f, line_length, 'Dependency of', path_root(parse_path(resolve['path'])) + dev_text)
+    write_name_value(f, line_length, 'Dependency of', path_root(parse_path(resolve['path'])) + dev_text, column_one_width)
     write_line(f, line_length, None)
-    write_name_value(f, line_length, 'Path', join_path(parse_path(resolve['path'])))
+    write_name_value(f, line_length, 'Path', join_path(parse_path(resolve['path']), column_one_width, line_length),
+                     column_one_width)
     write_line(f, line_length, None)
-    write_name_value(f, line_length, 'More info', vulnerability['url'])
+    write_name_value(f, line_length, 'More info', vulnerability['url'], column_one_width)
     write_line(f, line_length, None)
-    write_name_value(f, line_length, 'Project', project)
+    write_name_value(f, line_length, 'Project', project, column_one_width)
     write_line(f, line_length, 'bottom')
 
 
@@ -112,6 +162,18 @@ def read_action(action):
     # depth only exists for update actions
     depth = action.get('depth', '')
     return action_name, module, target, depth
+
+
+def summarise_vulnerabilities(vulnerabilities):
+    summaries = {}
+
+    for vulnerability in vulnerabilities:
+        project = vulnerability['project']
+        severity = vulnerability['vulnerability']['severity'].lower()
+        summary = summaries.get(project, {'critical': 0, 'high': 0, 'moderate': 0, 'low': 0, 'info': 0})
+        summary[severity] += 1
+        summaries[project] = summary
+    return summaries
 
 
 def filter_vulnerabilities(vulnerabilities, type):
@@ -176,6 +238,8 @@ def amalgamates(output, type, inputs):
 
     filtered_vulnerabilities = filter_vulnerabilities(all_vulnerabilities, type)
     sorted_vulnerabilities = sort_vulnerabilities(filtered_vulnerabilities)
+    summaries = summarise_vulnerabilities(sorted_vulnerabilities)
+    write_summary(f, summaries)
     write_vulnerabilities(f, sorted_vulnerabilities)
     f.close()
 
