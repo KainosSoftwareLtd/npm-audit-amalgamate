@@ -73,11 +73,11 @@ def write_line(f, length, type):
         line += horizontal_line
 
     if type == 'top':
-        f.write(f'{top_left_corner}{line}{top_right_corner}\n')
+        f.write('{}{}{}\n'.format(top_left_corner, line, top_right_corner))
     elif type == 'bottom':
-        f.write(f'{bottom_left_corner}{line}{bottom_right_corner}\n')
+        f.write('{}{}{}\n'.format(bottom_left_corner, line, bottom_right_corner))
     else:
-        f.write(f'{edge}{line}{edge}\n')
+        f.write('{}{}{}\n'.format(edge, line, edge))
 
 
 def write_name_value(f, length, name, value, width=15):
@@ -93,7 +93,7 @@ def write_name_value(f, length, name, value, width=15):
     for x in range(length - (column_one_width + len(value) + padding)):
         column_two += ' '
 
-    f.write(f'{edge}{column_one}{edge}{column_two}{edge}\n')
+    f.write('{}{}{}{}{}\n'.format(edge, column_one, edge, column_two, edge))
 
 
 def write_summary(f, summary_data):
@@ -107,7 +107,9 @@ def write_summary(f, summary_data):
     line_length = 100
     column_one_width = 30
     write_line(f, line_length, 'top')
-    write_name_value(f, line_length, 'Project', f'{pad("Critical", 10)}{pad("High", 10)}{pad("Moderate", 10)}{pad("Low", 10)}Info', column_one_width)
+    write_name_value(f, line_length, 'Project',
+                     '{}{}{}{}{}'.format(pad('Critical', 10), pad('High', 10), pad('Moderate', 10), pad('Low', 10), 'Info')
+                     , column_one_width)
     write_line(f, line_length, None)
 
     projects = summary_data.keys()
@@ -120,7 +122,9 @@ def write_summary(f, summary_data):
         info = str(result['info'])
         project_name = os.path.split(project)[-1].split('.')[0]
 
-        write_name_value(f, line_length, project_name, f'{pad(critical, 10)}{pad(high, 10)}{pad(moderate, 10)}{pad(low, 10)}{info}', column_one_width)
+        write_name_value(f, line_length, project_name,
+                         '{}{}{}{}{}'.format(pad(critical, 10), pad(high, 10), pad(moderate, 10), pad(low, 10), info),
+                         column_one_width)
         if idx + 1 < len(projects):
             write_line(f, line_length, None)
 
