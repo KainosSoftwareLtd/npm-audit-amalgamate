@@ -96,6 +96,23 @@ def write_name_value(f, length, name, value, width=15):
     f.write('{}{}{}{}{}\n'.format(edge, column_one, edge, column_two, edge))
 
 
+def get_summary_keys_by_order(summaries):
+    def severity_conversion(summary):
+        return (summary['critical'] * 10000) + (summary['high'] * 1000) + (summary['moderate'] * 100) + (summary['low'] * 10) + (summary['info'])
+
+    def key_retrieval(tuple):
+        return tuple[1]
+
+    sorted_summaries = {}
+    for key in summaries.keys():
+        value = severity_conversion(summaries[key])
+        sorted_summaries[key] = value
+
+    sorted_summaries = sorted(sorted_summaries.items(), key=key_retrieval, reverse=True)
+    sorted_keys = [i[0] for i in sorted_summaries]
+    return sorted_keys
+
+
 def write_summary(f, summary_data):
 
     def pad(str, size):
@@ -112,7 +129,7 @@ def write_summary(f, summary_data):
                      , column_one_width)
     write_line(f, line_length, None)
 
-    projects = summary_data.keys()
+    projects = get_summary_keys_by_order(summary_data)
     for idx, project in enumerate(projects):
         result = summary_data[project]
         critical = str(result['critical'])
